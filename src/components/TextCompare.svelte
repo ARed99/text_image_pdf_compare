@@ -37,6 +37,6 @@
 .inputs{
 width: 300px;
 height: 400px;
-
+background-color: blue;
 }
 </style>

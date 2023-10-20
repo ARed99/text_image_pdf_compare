@@ -1,6 +1,7 @@
 <script>
 	import { diffArrays } from 'diff';
-
+	
+  
 	let text1 = '';
 	let text2 = '';
 	let difference = '';
@@ -16,14 +17,26 @@
 	}
 
 	function displayDifference(diff) {
+        difference = ''
+        console.log(diff)
 		diff.forEach((el) => {
-			if (el.added === true) {
+            if(el.hasOwnProperty('added') === true && el.hasOwnProperty('removed')  === true){
+                if (el.added === true) {
 				console.log('added word : ' + el.value.join(' '));
+                difference += `<span class="added-text" >${el.value.join(' ')}</span> `
 			} else if (el.removed === true) {
 				console.log('removed word : ' + el.value.join(' '));
+                difference += `<span class="removed-text" >${el.value.join(' ')}</span> `
 			} else {
-				console.log('common words : ' + el.value);
+				console.log('common words : ' + el.value.join(' '));
+                difference += el.value.join(' ');
 			}
+            }else{
+                difference += el.value.join(' ') + " ";
+            }
+
+
+			
 		});
 	}
 </script>
@@ -36,7 +49,7 @@
 	</div>
 	<div class="button">
 		<button on:click={compareText}>Find difference</button>
-		<p bind:innerText={difference} contenteditable />
+		<p bind:innerHTML={difference} contenteditable />
 	</div>
 </div>
 

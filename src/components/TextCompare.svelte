@@ -35,8 +35,8 @@
 <style>
     
 .inputs{
-width: 300px;
-height: 400px;
+width: 800px;
+height: 500px;
 background-color: blue;
 display:flex;
 

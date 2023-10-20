@@ -2,3 +2,11 @@
     margin:0px;
     padding:0px;
 }
+.added-text{
+    color:green;
+    background-color:lightgreen;
+}
+.removed-text{
+    color:red;
+    background-color:rgba(219, 55, 22, 0.708);
+}

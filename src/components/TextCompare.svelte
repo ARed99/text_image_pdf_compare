@@ -26,7 +26,7 @@
                 difference += `<span class="added-text" >${el.value.join(' ')}</span> `
 			} else if (el.removed === true) {
 				console.log('removed word : ' + el.value.join(' '));
-                difference += `<span class="removed-text" >${el.value.join(' ')}</span> `
+                difference += `<span class="removed-text badge position-absolute top-100 --bs-light-text-emphasis  rounded-pill --bs-danger-border-subtle" >${el.value.join(' ')}</span> `
 			} else {
 				console.log('common words : ' + el.value.join(' '));
                 difference += el.value.join(' ');
@@ -49,7 +49,7 @@
 	</div>
 	<div class="button">
 		<button on:click={compareText}>Find difference</button>
-		<p bind:innerHTML={difference} contenteditable />
+		<p class="position-relative" bind:innerHTML={difference} contenteditable />
 	</div>
 </div>
 

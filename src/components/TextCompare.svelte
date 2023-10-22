@@ -46,12 +46,30 @@
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />
 	</div>
 	<div class="button">
-		<button on:click={compareText}>Find difference</button>
-		<div class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
+		<button class="diff-btn" on:click={compareText}>Find difference</button>
+		
 	</div>
+	<div class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
 </div>
 
 <style>
+	.button{
+		display: grid	;
+		justify-content: center;
+		z-index: 100;
+		position: fixed;
+      left: 0;
+	  right: 0;
+	  top: 480px;
+	}
+	.diff-btn{
+		font-size: 25px;
+	
+		background-color: lightgreen;
+		border-radius: 20px;
+		border: 0px;
+		padding: 10px;
+	}
 	.inputs {
 		width: 1000px;
 		height: 400px;
@@ -65,6 +83,7 @@
 			Geneva, Verdana, sans-serif;
 		resize: none;
 		width: 100%;
+		padding: 10px;
 	}
 	.title{
 		display: flex;

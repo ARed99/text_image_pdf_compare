@@ -36,6 +36,11 @@
 
 <div class="text-compare">
 	<h1>Compare text</h1>
+	<div class="title">
+		<h3>Orginal text</h3>
+		<h3>Changed text</h3>
+		
+	</div>
 	<div class="inputs">
 		<textarea bind:value={text1} name="text1" id="text1" cols="30" rows="10" />
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />

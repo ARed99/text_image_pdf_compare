@@ -24,14 +24,13 @@
 	padding: 10px;
 	padding-top: 35px;
 }
-.difference-box::-webkit-scrollbar{
-
+.difference-box::-webkit-scrollbar {
 	display: none;
 }
 .normal-text {
 	font-size: large;
 }
-h1{
-	margin:0px;
-	padding:0px;
+h1 {
+	margin: 0px;
+	padding: 0px;
 }

@@ -39,7 +39,6 @@
 	<div class="title">
 		<h4>Orginal text</h4>
 		<h4>Changed text</h4>
-		
 	</div>
 	<div class="inputs">
 		<textarea bind:value={text1} name="text1" id="text1" cols="30" rows="10" />
@@ -47,24 +46,22 @@
 	</div>
 	<div class="button">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
-		
 	</div>
 	<div class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
 </div>
 
 <style>
-	.button{
-		display: grid	;
+	.button {
+		display: grid;
 		justify-content: center;
 		z-index: 100;
 		position: fixed;
-      left: 0;
-	  right: 0;
-	  top: 480px;
+		left: 0;
+		right: 0;
+		top: 480px;
 	}
-	.diff-btn{
+	.diff-btn {
 		font-size: 25px;
-	
 		background-color: lightgreen;
 		border-radius: 20px;
 		border: 0px;
@@ -85,9 +82,8 @@
 		width: 100%;
 		padding: 10px;
 	}
-	.title{
+	.title {
 		display: flex;
 		justify-content: space-between;
 	}
-
 </style>

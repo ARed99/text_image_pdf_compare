@@ -24,12 +24,12 @@
                 if (el.added === true) {
                 difference += `<span class="added-text" >${el.value.join(' ')}</span> `
 			} else if (el.removed === true) {
-                difference += `<span class="removed-text badge position-absolute top-200 --bs-light-text-emphasis  rounded-pill --bs-danger-border-subtle" >${el.value.join(' ')}</span> `
+                difference += `<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `
 			} else {
                 difference += el.value.join(' ');
 			}
             }else{
-                difference += el.value.join(' ') + " ";
+                difference += `<span class="added-text">  ${el.value.join(' ')} </span>`
             }
 
 
@@ -46,7 +46,7 @@
 	</div>
 	<div class="button">
 		<button on:click={compareText}>Find difference</button>
-		<p class="position-relative" bind:innerHTML={difference} contenteditable />
+		<p class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
 	</div>
 </div>
 

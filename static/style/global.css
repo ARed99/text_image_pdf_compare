@@ -3,10 +3,18 @@
     padding:0px;
 }
 .added-text{
-    color:green;
-    background-color:lightgreen;
+ 
+    font-size: 20px;
 }
 .removed-text{
     color:red;
-    background-color:rgba(219, 55, 22, 0.708);
+    background-color:rgba(255, 0, 0, 0.496);
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+.difference-box{
+   width: 1000px;
+   height: 500px;
+   border: 3px solid black;
 }

@@ -37,8 +37,8 @@
 <div class="text-compare">
 	<h1>Compare text</h1>
 	<div class="title">
-		<h3>Orginal text</h3>
-		<h3>Changed text</h3>
+		<h4>Orginal text</h4>
+		<h4>Changed text</h4>
 		
 	</div>
 	<div class="inputs">
@@ -65,5 +65,9 @@
 			Geneva, Verdana, sans-serif;
 		resize: none;
 		width: 100%;
+	}
+	.title{
+		display: flex;
+		justify-content: space-between;
 	}
 </style>

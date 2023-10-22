@@ -22,14 +22,14 @@
 		diff.forEach((el) => {
             if(el.hasOwnProperty('added') === true && el.hasOwnProperty('removed')  === true){
                 if (el.added === true) {
-                difference += `<span class="added-text" >${el.value.join(' ')}</span> `
+                difference += `<sub><span class="added-text" >${el.value.join(' ')}</span> </sub>`
 			} else if (el.removed === true) {
                 difference += `<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `
 			} else {
                 difference += el.value.join(' ');
 			}
             }else{
-                difference += `<span class="added-text">  ${el.value.join(' ')} </span>`
+                difference += `<span class="normal-text">  ${el.value.join(' ')} </span>`
             }
 
 

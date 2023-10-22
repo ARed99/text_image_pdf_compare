@@ -47,14 +47,14 @@
 	</div>
 	<div class="button">
 		<button on:click={compareText}>Find difference</button>
-		<p class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
+		<div class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
 	</div>
 </div>
 
 <style>
 	.inputs {
 		width: 1000px;
-		height: 500px;
+		height: 400px;
 		background-color: blue;
 		display: flex;
 		justify-content: space-evenly;
@@ -70,4 +70,5 @@
 		display: flex;
 		justify-content: space-between;
 	}
+
 </style>

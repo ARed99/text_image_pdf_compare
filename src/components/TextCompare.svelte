@@ -1,7 +1,6 @@
 <script>
 	import { diffArrays } from 'diff';
-	
-  
+
 	let text1 = '';
 	let text2 = '';
 	let difference = '';
@@ -17,23 +16,20 @@
 	}
 
 	function displayDifference(diff) {
-        difference = ''
-        console.log(diff)
+		difference = '';
+		console.log(diff);
 		diff.forEach((el) => {
-            if(el.hasOwnProperty('added') === true && el.hasOwnProperty('removed')  === true){
-                if (el.added === true) {
-                difference += `<sub><span class="added-text" >${el.value.join(' ')}</span> </sub>`
-			} else if (el.removed === true) {
-                difference += `<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `
+			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
+				if (el.added === true) {
+					difference += `<sub><span class="added-text" >${el.value.join(' ')}</span> </sub>`;
+				} else if (el.removed === true) {
+					difference += `<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `;
+				} else {
+					difference += el.value.join(' ');
+				}
 			} else {
-                difference += el.value.join(' ');
+				difference += `<span class="normal-text">  ${el.value.join(' ')} </span>`;
 			}
-            }else{
-                difference += `<span class="normal-text">  ${el.value.join(' ')} </span>`
-            }
-
-
-			
 		});
 	}
 </script>

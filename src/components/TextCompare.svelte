@@ -22,13 +22,10 @@
 		diff.forEach((el) => {
             if(el.hasOwnProperty('added') === true && el.hasOwnProperty('removed')  === true){
                 if (el.added === true) {
-				console.log('added word : ' + el.value.join(' '));
                 difference += `<span class="added-text" >${el.value.join(' ')}</span> `
 			} else if (el.removed === true) {
-				console.log('removed word : ' + el.value.join(' '));
-                difference += `<span class="removed-text badge position-absolute top-100 --bs-light-text-emphasis  rounded-pill --bs-danger-border-subtle" >${el.value.join(' ')}</span> `
+                difference += `<span class="removed-text badge position-absolute top-200 --bs-light-text-emphasis  rounded-pill --bs-danger-border-subtle" >${el.value.join(' ')}</span> `
 			} else {
-				console.log('common words : ' + el.value.join(' '));
                 difference += el.value.join(' ');
 			}
             }else{

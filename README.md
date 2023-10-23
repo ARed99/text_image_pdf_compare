@@ -6,7 +6,9 @@
 2.Image compare ( **upcoming** )  
 3.Pdf Compare   ( **upcoming** ) 
 
-## Text Compare ( **/compare-text** )
+## Text Compare ( **/compare-text** )  
+
+![comapare text](/assets/text_compare.png)
 
 # create-svelte
 

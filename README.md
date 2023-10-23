@@ -1,9 +1,10 @@
 # text_image_pdf_compare
 
 ## Features
-1.Text compare
-2.Image compare ( **upcoming** )
-3.Pdf Compare   ( **upcoming** )
+
+1.Text compare  
+2.Image compare ( **upcoming** )  
+3.Pdf Compare   ( **upcoming** ) 
 
 ## Text Compare ( **/compare-text** )
 

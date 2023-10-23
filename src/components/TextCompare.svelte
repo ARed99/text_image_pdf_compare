@@ -66,6 +66,13 @@
 		border-radius: 20px;
 		border: 0px;
 		padding: 10px;
+		border-bottom: 3px solid black;
+		transition: all 100ms;
+	}
+	.diff-btn:active{
+		transition: all 100ms;
+		border-bottom: 0px;
+		font-size: 20px;
 	}
 	.inputs {
 		width: 1000px;

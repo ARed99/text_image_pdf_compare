@@ -8,7 +8,7 @@
 
 ## Text Compare ( **/compare-text** )  
 
-![comapare text](/assets/compare-text.png)
+![comapare text](/assets/text_compare.png)
 
 # create-svelte
 

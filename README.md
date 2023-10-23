@@ -1,3 +1,13 @@
+# text_image_pdf_compare
+
+## Features
+
+1.Text compare  
+2.Image compare ( **upcoming** )  
+3.Pdf Compare   ( **upcoming** ) 
+
+## Text Compare ( **/compare-text** )
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

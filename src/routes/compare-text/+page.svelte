@@ -2,6 +2,12 @@
 	import TextCompare from '../../components/TextCompare.svelte';
 </script>
 
+<svelte:head>
+	<title>
+		Compare text
+	</title>
+</svelte:head>
+
 <div class="box">
 	<TextCompare />
 </div>

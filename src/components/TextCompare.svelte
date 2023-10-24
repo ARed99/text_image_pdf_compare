@@ -17,7 +17,6 @@
 
 	function displayDifference(diff) {
 		difference = '';
-		console.log(diff);
 		diff.forEach((el) => {
 			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
 				if (el.added === true) {

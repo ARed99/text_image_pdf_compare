@@ -1,5 +1,5 @@
 <script>
 	import PdfCompare from "../../components/PdfCompare.svelte";
-
+export let data;
 </script>
-<PdfCompare />
+<PdfCompare data={data.pdfs}/>

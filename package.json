@@ -32,7 +32,6 @@
 	"type": "module",
 	"dependencies": {
 		"bootstrap": "^5.3.2",
-		"diff": "^5.1.0",
-		"pdf-diff": "^0.1.1"
+		"diff": "^5.1.0"
 	}
 }

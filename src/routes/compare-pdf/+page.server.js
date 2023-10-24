@@ -1,4 +1,3 @@
-import { esbuildVersion } from 'vite';
 
 let pdf1 = null;
 let pdf2 = null;

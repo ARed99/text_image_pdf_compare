@@ -1,4 +1,3 @@
-<script>
-	import PdfCompare from "../../components/PdfCompare.svelte";
-</script>
-<PdfCompare/>
+<h1>
+	pdf
+</h1>

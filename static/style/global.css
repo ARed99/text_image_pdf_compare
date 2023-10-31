@@ -8,6 +8,7 @@
 	font-size: 15px;
 	border-radius: 10px;
 	font-weight: bolder;
+	padding: 4px;
 }
 .removed-text {
 	color: red;
@@ -15,6 +16,7 @@
 	font-size: 15px;
 	border-radius: 10px;
 	font-weight: bolder;
+	padding: 4px;
 }
 .difference-box {
 	width: 1000px;

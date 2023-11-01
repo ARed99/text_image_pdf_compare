@@ -4,7 +4,7 @@
 	let text1 = '';
 	let text2 = '';
 	let difference = '';
-
+    let diff_box;
 	function compareText() {
 		if (text1 != '' || text2 != '') {
 			displayDifference(diffArrays(text1.split(' '), text2.split(' ')));
@@ -30,6 +30,7 @@
 				difference += `<span class="normal-text">  ${el.value.join(' ')} </span>`;
 			}
 		});
+		diff_box.innerHTML = difference
 	}
 </script>
 
@@ -46,7 +47,7 @@
 	<div class="button">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
 	</div>
-	<div class="position-relative difference-box" bind:innerHTML={difference} contenteditable />
+	<div class="position-relative difference-box" bind:this={diff_box}/>
 </div>
 
 <style>

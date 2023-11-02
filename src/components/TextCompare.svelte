@@ -5,6 +5,9 @@
 	let text2 = '';
 	let difference = '';
     let diff_box;
+	let added_text = [];
+	let removed_text = [];
+
 	function compareText() {
 		if (text1 != '' || text2 != '') {
 			displayDifference(diffArrays(text1.split(' '), text2.split(' ')));
@@ -16,12 +19,17 @@
 	}
 
 	function displayDifference(diff) {
+		
 		difference = '';
 		diff.forEach((el) => {
 			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
 				if (el.added === true) {
+					added_text.push(el.value.join(' '))
+					
 					difference += `<span class="added-text" >${el.value.join(' ')}</span> `;
 				} else if (el.removed === true) {
+					removed_text.push(el.value.join(' '))
+					
 					difference += `<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `;
 				} else {
 					difference += el.value.join(' ');
@@ -31,6 +39,7 @@
 			}
 		});
 		diff_box.innerHTML = difference
+		console.log(" \nadded text: \n", added_text ,"\n removed text\n" , removed_text)
 	}
 </script>
 

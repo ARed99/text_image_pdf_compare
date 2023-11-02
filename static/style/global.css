@@ -26,6 +26,18 @@
 	padding: 10px;
 	padding-top: 35px;
 }
+.merge-btn{
+	background:none;
+	font-size: 15px;
+	border: 2px solid red;
+	padding: 20px;
+	color: red;
+	font-weight: bolder;
+}
+.added-merge{
+	border: 2px solid green;
+	color: green;
+}
 .difference-box::-webkit-scrollbar {
 	display: none;
 }

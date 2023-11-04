@@ -19,7 +19,8 @@
 	}
 
 	function displayDifference(diff) {
-		
+		added_text = []
+		removed_text = []
 		difference = '';
 		diff.forEach((el) => {
 			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
@@ -29,7 +30,11 @@
 					difference += `
 						<span class="added-text" >${el.value.join(' ')}</span>
 						<sup>
-						<button class="merge-btn added-merge" >Merge</button>
+						<button onClick="
+							console.log("licke")
+
+						
+						" class="merge-btn added-merge" >Merge</button>
 						
 						</sup>
 						`;
@@ -52,6 +57,8 @@
 		diff_box.innerHTML = difference
 		console.log(" \nadded text: \n", added_text ,"\n removed text\n" , removed_text)
 	}
+
+	
 </script>
 
 <div class="text-compare">
@@ -112,5 +119,8 @@
 	.title {
 		display: flex;
 		justify-content: space-between;
+	}
+	h1{
+		text-align: center;
 	}
 </style>

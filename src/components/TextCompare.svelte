@@ -29,23 +29,13 @@
 					
 					difference += `
 						<span class="added-text" >${el.value.join(' ')}</span>
-						<sup>
-						<button onClick="
-							console.log("licke")
-
 						
-						" class="merge-btn added-merge" >Merge</button>
-						
-						</sup>
 						`;
 				} else if (el.removed === true) {
 					removed_text.push(el.value.join(' '))
 					
 					difference += `
-					<sup>
-						<button class="merge-btn" >Merge</button>
-						
-						</sup>
+					
 					<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `;
 				} else {
 					difference += el.value.join(' ');

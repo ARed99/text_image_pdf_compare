@@ -1,13 +1,17 @@
 <script>
 	import { diffArrays } from 'diff';
+	import { onMount } from 'svelte';
 
 	let text1 = '';
 	let text2 = '';
+	let diff_box;
 	let difference = '';
-    let diff_box;
 	let added_text = [];
 	let removed_text = [];
-
+	onMount(()=>{
+		 diff_box = window.document.getElementById('diff-box')
+	})
+   console.log();
 	function compareText() {
 		if (text1 != '' || text2 != '') {
 			displayDifference(diffArrays(text1.split(' '), text2.split(' ')));
@@ -19,32 +23,47 @@
 	}
 
 	function displayDifference(diff) {
+		diff_box.innerHTML = ''
 		added_text = []
 		removed_text = []
-		difference = '';
+		difference = window.document.createElement('div')
+		
 		diff.forEach((el) => {
+			const value = el.value.join(' ')
 			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
+				
 				if (el.added === true) {
+					// added text
+					const span = window.document.createElement('span') 
+		            span.innerText = value
+					span.classList.add('added-text')
 					added_text.push(el.value.join(' '))
-					
-					difference += `
-						<span class="added-text" >${el.value.join(' ')}</span>
-						
-						`;
+					difference.appendChild(span)
 				} else if (el.removed === true) {
+					// removed text
+					const span = window.document.createElement('span')
+		            span.innerText = value
+					span.classList.add('removed-text')
 					removed_text.push(el.value.join(' '))
-					
-					difference += `
-					
-					<sup><span class="removed-text" >${el.value.join(' ')}</span></sup> `;
+					difference.appendChild(span)
 				} else {
-					difference += el.value.join(' ');
+					// common text
+					const span = window.document.createElement('span')
+		            span.innerText = value
+					span.classList.add('normal-text')
+					difference.appendChild(span)
 				}
 			} else {
-				difference += `<span class="normal-text">  ${el.value.join(' ')} </span>`;
+				// this will when there is no change
+				const span = window.document.createElement('span')
+		        span.innerText = value
+				span.classList.add('normal-text')
+				difference.appendChild(span)
 			}
+			
 		});
-		diff_box.innerHTML = difference
+		diff_box.appendChild(difference)
+		
 		console.log(" \nadded text: \n", added_text ,"\n removed text\n" , removed_text)
 	}
 
@@ -64,7 +83,7 @@
 	<div class="button">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
 	</div>
-	<div class="position-relative difference-box" bind:this={diff_box}/>
+	<div class="position-relative difference-box" id="diff-box"/>
 </div>
 
 <style>

@@ -45,16 +45,17 @@
 					difference.appendChild(span)
 				} else if (el.removed === true) {
 					// removed text
+					const sup = window.document.createElement('sup')
 					const span = window.document.createElement('span')
 		            span.innerText = value
-					span.classList.add('removed-text')
-					span.addEventListener('click' , ()=>{
+					sup.classList.add('removed-text')
+					sup.addEventListener('click' , ()=>{
 						console.log("removed btn clicked")
-						difference.removeChild(span)
+						difference.removeChild(sup)
 					})
-
+                    sup.appendChild(span) //adding <sup> tag for the text to pop up.
 					removed_text.push(el.value.join(' '))
-					difference.appendChild(span)
+					difference.appendChild(sup)
 				} else {
 					// common text
 					const span = window.document.createElement('span')

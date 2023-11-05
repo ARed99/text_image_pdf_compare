@@ -37,6 +37,10 @@
 					const span = window.document.createElement('span') 
 		            span.innerText = value
 					span.classList.add('added-text')
+					span.addEventListener('click' , ()=>{
+						console.log("added btn clicked")
+						difference.removeChild(span)
+					})
 					added_text.push(el.value.join(' '))
 					difference.appendChild(span)
 				} else if (el.removed === true) {
@@ -44,19 +48,24 @@
 					const span = window.document.createElement('span')
 		            span.innerText = value
 					span.classList.add('removed-text')
+					span.addEventListener('click' , ()=>{
+						console.log("removed btn clicked")
+						difference.removeChild(span)
+					})
+
 					removed_text.push(el.value.join(' '))
 					difference.appendChild(span)
 				} else {
 					// common text
 					const span = window.document.createElement('span')
-		            span.innerText = value
+		            span.innerText = " " + value + " "
 					span.classList.add('normal-text')
 					difference.appendChild(span)
 				}
 			} else {
 				// this will when there is no change
 				const span = window.document.createElement('span')
-		        span.innerText = value
+		        span.innerText = " " + value + " "
 				span.classList.add('normal-text')
 				difference.appendChild(span)
 			}

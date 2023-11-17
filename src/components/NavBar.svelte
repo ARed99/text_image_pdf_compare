@@ -8,3 +8,10 @@
       <li><a href="/compare-image">Image</a></li>
     </ul>
   </nav>
+
+  <style>
+    nav{
+        display: flex;
+        justify-content: space-around;
+    }
+  </style>

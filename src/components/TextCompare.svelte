@@ -92,6 +92,8 @@
 	</div>
 	<div class="tool-bar">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
+		<button class="undo-btn">undo</button>
+		<button class="redo-btn">redo</button>
 	</div>
 	
 	<div class="position-relative difference-box" id="diff-box"/>

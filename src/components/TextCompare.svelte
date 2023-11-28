@@ -91,7 +91,7 @@
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />
 	</div>
 	<div class="tool-bar">
-		
+		<button class="diff-btn" on:click={compareText}>Find difference</button>
 	</div>
 	
 	<div class="position-relative difference-box" id="diff-box"/>

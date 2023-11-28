@@ -98,23 +98,24 @@
 </div>
 
 <style>
-	.button {
-		display: grid;
-		justify-content: center;
-		z-index: 100;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 480px;
+	.tool-bar {
+		display: flex;
+		justify-content: space-between;
+
+		width: 100%;
+		border: 2px solid grey;
+		height: 50px;
 	}
 	.diff-btn {
-		font-size: 25px;
+		font-size: 20px;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		background-color: lightgreen;
-		border-radius: 20px;
+		border-radius: 10px;
 		border: 0px;
-		padding: 10px;
+		padding: 5px;
 		border-bottom: 3px solid black;
 		transition: all 100ms;
+		height: 40px;
 	}
 	.diff-btn:active{
 		transition: all 100ms;

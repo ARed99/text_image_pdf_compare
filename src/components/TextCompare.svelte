@@ -90,6 +90,9 @@
 		<textarea bind:value={text1} name="text1" id="text1" cols="30" rows="10" />
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />
 	</div>
+	<div class="tool-bar">
+		
+	</div>
 	<div class="button">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
 	</div>

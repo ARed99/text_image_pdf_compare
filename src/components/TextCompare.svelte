@@ -90,34 +90,31 @@
 		<textarea bind:value={text1} name="text1" id="text1" cols="30" rows="10" />
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />
 	</div>
+	<br>
 	<div class="tool-bar">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
 		<button class="undo-btn">undo</button>
 		<button class="redo-btn">redo</button>
 	</div>
-	
+	<br>	
 	<div class="position-relative difference-box" id="diff-box"/>
 </div>
 
 <style>
 	.tool-bar {
 		display: flex;
-		justify-content: space-between;
-
-		width: 100%;
-		border: 2px solid grey;
+		justify-content: center;
+	
 		height: 50px;
 	}
 	.diff-btn {
 		font-size: 20px;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		background-color: lightgreen;
-		border-radius: 10px;
 		border: 0px;
 		padding: 5px;
-		border-bottom: 3px solid black;
+	
 		transition: all 100ms;
-		height: 40px;
+
 	}
 	.diff-btn:active{
 		transition: all 100ms;
@@ -138,6 +135,7 @@
 		resize: none;
 		width: 100%;
 		padding: 10px;
+		margin: 0%;
 	}
 	.title {
 		display: flex;
@@ -145,5 +143,22 @@
 	}
 	h1{
 		text-align: center;
+	}
+	.undo-btn{
+	
+		background-color: red;
+	}
+	.redo-btn{
+		background-color: green;
+	}
+	button{
+		width: fit-content;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		padding: 5px;
+		height: 40px;
+		
+	}
+	button:active{
+		border: 0px;
 	}
 </style>

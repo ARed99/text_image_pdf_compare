@@ -37,12 +37,14 @@
 					const span = window.document.createElement('span');
 					span.innerText = value;
 					span.classList.add('added-text');
+
 					span.addEventListener('click', () => {
 						console.log('added btn clicked');
 						history.push(difference); // adding current state to history stack
 						console.log('ADDED ONE STACT', history);
 						difference.removeChild(span);
 					});
+
 					added_text.push(el.value.join(' '));
 					difference.appendChild(span);
 				} else if (el.removed === true) {
@@ -51,12 +53,14 @@
 					const span = window.document.createElement('span');
 					span.innerText = value;
 					sup.classList.add('removed-text');
+
 					sup.addEventListener('click', () => {
 						console.log('removed btn clicked');
 						history.push(difference); // adding current state to history stack
 						console.log(history);
 						difference.removeChild(sup);
 					});
+
 					sup.appendChild(span); //adding <sup> tag for the text to pop up.
 					removed_text.push(el.value.join(' '));
 					difference.appendChild(sup);

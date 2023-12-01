@@ -8,10 +8,11 @@
 	let difference = '';
 	let added_text = [];
 	let removed_text = [];
-	onMount(()=>{
-		 diff_box = window.document.getElementById('diff-box')
-	})
-   console.log();
+	let history = [];
+	onMount(() => {
+		diff_box = window.document.getElementById('diff-box');
+	});
+	console.log();
 	function compareText() {
 		if (text1 != '' || text2 != '') {
 			displayDifference(diffArrays(text1.split(' '), text2.split(' ')));
@@ -23,61 +24,68 @@
 	}
 
 	function displayDifference(diff) {
-		diff_box.innerHTML = ''
-		added_text = []
-		removed_text = []
-		difference = window.document.createElement('div')
-		
+		diff_box.innerHTML = '';
+		added_text = [];
+		removed_text = [];
+		difference = window.document.createElement('div');
+
 		diff.forEach((el) => {
-			const value = el.value.join(' ')
+			const value = el.value.join(' ');
 			if (el.hasOwnProperty('added') === true && el.hasOwnProperty('removed') === true) {
-				
 				if (el.added === true) {
 					// added text
-					const span = window.document.createElement('span') 
-		            span.innerText = value
-					span.classList.add('added-text')
-					span.addEventListener('click' , ()=>{
-						console.log("added btn clicked")
-						difference.removeChild(span)
-					})
-					added_text.push(el.value.join(' '))
-					difference.appendChild(span)
+					const span = window.document.createElement('span');
+					span.innerText = value;
+					span.classList.add('added-text');
+					span.addEventListener('click', () => {
+						console.log('added btn clicked');
+						history.push(difference); // adding current state to history stack
+						console.log('ADDED ONE STACT', history);
+						difference.removeChild(span);
+					});
+					added_text.push(el.value.join(' '));
+					difference.appendChild(span);
 				} else if (el.removed === true) {
 					// removed text
-					const sup = window.document.createElement('sup')
-					const span = window.document.createElement('span')
-		            span.innerText = value
-					sup.classList.add('removed-text')
-					sup.addEventListener('click' , ()=>{
-						console.log("removed btn clicked")
-						difference.removeChild(sup)
-					})
-                    sup.appendChild(span) //adding <sup> tag for the text to pop up.
-					removed_text.push(el.value.join(' '))
-					difference.appendChild(sup)
+					const sup = window.document.createElement('sup');
+					const span = window.document.createElement('span');
+					span.innerText = value;
+					sup.classList.add('removed-text');
+					sup.addEventListener('click', () => {
+						console.log('removed btn clicked');
+						history.push(difference); // adding current state to history stack
+						console.log(history);
+						difference.removeChild(sup);
+					});
+					sup.appendChild(span); //adding <sup> tag for the text to pop up.
+					removed_text.push(el.value.join(' '));
+					difference.appendChild(sup);
 				} else {
 					// common text
-					const span = window.document.createElement('span')
-		            span.innerText = " " + value + " "
-					span.classList.add('normal-text')
-					difference.appendChild(span)
+					const span = window.document.createElement('span');
+					span.innerText = ' ' + value + ' ';
+					span.classList.add('normal-text');
+					difference.appendChild(span);
 				}
 			} else {
 				// this will when there is no change
-				const span = window.document.createElement('span')
-		        span.innerText = " " + value + " "
-				span.classList.add('normal-text')
-				difference.appendChild(span)
+				const span = window.document.createElement('span');
+				span.innerText = ' ' + value + ' ';
+				span.classList.add('normal-text');
+				difference.appendChild(span);
 			}
-			
 		});
-		diff_box.appendChild(difference)
-		
-		console.log(" \nadded text: \n", added_text ,"\n removed text\n" , removed_text)
+		diff_box.appendChild(difference);
+
+		console.log(' \nadded text: \n', added_text, '\n removed text\n', removed_text);
 	}
 
-	
+	function undoState() {
+		const node = window.document.createElement('div');
+		node.append(history[0]);
+		history.shift();
+		diff_box.appendChild(node);
+	}
 </script>
 
 <div class="text-compare">
@@ -90,21 +98,21 @@
 		<textarea bind:value={text1} name="text1" id="text1" cols="30" rows="10" />
 		<textarea bind:value={text2} name="text2" id="text2" cols="30" rows="10" />
 	</div>
-	<br>
+	<br />
 	<div class="tool-bar">
 		<button class="diff-btn" on:click={compareText}>Find difference</button>
-		<button class="undo-btn">undo</button>
+		<button on:click={undoState} class="undo-btn">undo</button>
 		<button class="redo-btn">redo</button>
 	</div>
-	<br>	
-	<div class="position-relative difference-box" id="diff-box"/>
+	<br />
+	<div class="position-relative difference-box" id="diff-box" />
 </div>
 
 <style>
 	.tool-bar {
 		display: flex;
 		justify-content: center;
-	
+
 		height: 50px;
 	}
 	.diff-btn {
@@ -112,11 +120,10 @@
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		border: 0px;
 		padding: 5px;
-	
-		transition: all 100ms;
 
+		transition: all 100ms;
 	}
-	.diff-btn:active{
+	.diff-btn:active {
 		transition: all 100ms;
 		border-bottom: 0px;
 		font-size: 20px;
@@ -141,24 +148,22 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	h1{
+	h1 {
 		text-align: center;
 	}
-	.undo-btn{
-	
+	.undo-btn {
 		background-color: red;
 	}
-	.redo-btn{
+	.redo-btn {
 		background-color: green;
 	}
-	button{
+	button {
 		width: fit-content;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		padding: 5px;
 		height: 40px;
-		
 	}
-	button:active{
+	button:active {
 		border: 0px;
 	}
 </style>

@@ -85,10 +85,9 @@
 	}
 
 	function undoState() {
-		const node = window.document.createElement('div');
-		node.append(history[0]);
+
+		diff_box.appendChild(difference)
 		history.shift();
-		diff_box.appendChild(node);
 	}
 </script>
 
